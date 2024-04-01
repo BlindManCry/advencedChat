@@ -1,6 +1,7 @@
-export const signUp = (req, res) => {
-  res.send("sinupuser");
-  console.log("signUpUser");
+export const signUp = async (req, res) => {
+  try {
+    const { fullName, username, password, confirmPassword, gender } = req.body;
+  } catch (error) {}
 };
 
 export const login = (req, res) => {
