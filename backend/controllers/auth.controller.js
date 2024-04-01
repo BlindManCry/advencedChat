@@ -81,5 +81,11 @@ export const login = async (req, res) => {
 };
 
 export const logout = (req, res) => {
-  console.log("logoutUser");
+  try {
+    res.cookie("jsw", "", { maxAge: 0 });
+    res.status(200).json({ message: "Loged out successfully" });
+  } catch (error) {
+    console.log("Error in logout conroller", error.message);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 };
